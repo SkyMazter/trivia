@@ -4,7 +4,17 @@ body {
 }
 
 .app {
-  text-align: center;
+  display:flex;
+  justify-content: space-around;
+  flex-flow: column;
+  align-items: center;
 }
-
-
+.answer{
+  padding: 10px;
+  background-color: blueviolet;
+  border:black solid 3px;
+}
+.question{
+  height:100px;
+  width:300px;
+}
