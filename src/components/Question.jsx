@@ -8,7 +8,7 @@ class Question extends Component {
   render() {
     return (
       <div className ="question">
-        <p>{this.props.qText}</p>
+        <h1>{this.props.qText}</h1>
         
       </div>
     );

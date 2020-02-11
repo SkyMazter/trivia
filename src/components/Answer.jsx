@@ -3,7 +3,7 @@ import React, {Component} from 'react';
 class Answer extends Component {
     handler = () =>{
        if(this.props.correctAns){
-           alert("sjkdvhb");
+           alert("correct");
        }
         
     }

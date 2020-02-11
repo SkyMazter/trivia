@@ -17,14 +17,17 @@ class App extends React.Component {
     
     return (
       <div className="app">
-        Trivia!
+        <h2>Riddle.It</h2>
         
         <Questions qText ={question}/>
-        {data.questions[i].choices.map((element,x) => {
-          let correctAns =  (x === answer)
-        return  <Answer ansText = {element} correctAns = {correctAns}/>
+        <div className = "ansHolder">
+          {data.questions[i].choices.map((element,x) => {
+            let correctAns =  (x === answer)
+          return  <Answer ansText = {element} correctAns = {correctAns}/>
 
-        })}
+          })}
+        </div>
+        
         
       </div>
     );
