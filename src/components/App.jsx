@@ -18,13 +18,13 @@ componentDidMount(){
   let database = buildFirebase();
   let questions;
   let databaseRef = database.ref("/questions");
-  console.log(this)
-  databaseRef.once("value").then(function(data){
+  databaseRef.once("value").then((data) =>{
      questions = Object.values(data.val());
-    console.log(questions);
-    console.log(this)
-    this.setState({questions})
-
+    this.setState({questions}, ()=>{
+      // we can give this.setState a callback function here, which allows us to log the state value after
+      // we finish setting state - check it out in the console!
+      console.log(this.state)
+    })
   }); 
 }
   render() {
