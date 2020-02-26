@@ -13,6 +13,7 @@ constructor(){
   this.state={
     questions: [],
     i: 0,
+    points:0,
   }
 };
 componentDidMount(){
@@ -46,13 +47,14 @@ componentDidMount(){
     return (
       <div className="app">
         <h2>Riddle.It</h2>
-
+        <h3>Points: {this.state.points}</h3>
         <Questions qText ={question}/>
         <div className = "ansHolder">
           {this.state.questions[this.state.i].choices.map((element,x) => {
             let correctAns =  (x === answer)
           return  <Answer ansText = {element} correctAns = {correctAns} click={()=>{
             this.setState({i: this.state.i + 1}, () => console.log(this.state.i))
+            this.setState({points:this.state.points+1})
           }}/>
 
           })}
