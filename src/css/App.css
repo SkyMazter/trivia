@@ -9,21 +9,22 @@ body {
   flex-flow: column;
   align-items: center;
   height: 100vh;
-  background-color: rgb(97, 14, 138);
+  background-color: rgb(148, 19, 212);
   font-family: 'Quicksand', sans-serif;
 }
 .answer{
   display:flex;
   align-items: center;
   justify-content: center;
-  background-color: rgb(33, 199, 33);
+  background-color: rgb(28, 139, 28);
   border:black solid 3px;
   box-shadow: 5px 10px black;
   width:225px;
   height:75px;
+  font-size:30px;
 }
 .answer:hover{
-  background-color: yellow;
+  background-color: rgb(28, 199, 33)
   
 }
 .answer:active{
@@ -37,11 +38,11 @@ body {
   align-items: center;
   width:75%;
   height: 30%;
-  background-color: rgb(33, 199, 33);
+  background-color:rgb(28, 139, 28);
   box-shadow: 5px 10px black;
 }
 .question, h1{
-  color:purple;
+  color:rgb(43, 1, 65);
 }
 .ansHolder{
   display: flex;

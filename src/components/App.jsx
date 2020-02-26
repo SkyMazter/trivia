@@ -16,7 +16,7 @@ constructor(){
   }
 };
 componentDidMount(){
-  
+
   let database = buildFirebase();
   let questions;
   let databaseRef = database.ref("/questions");
@@ -37,16 +37,16 @@ componentDidMount(){
     if(!this.state.questions.length){
       return null
     }
-    
+
     const { questions } = this.state;
     let question = questions[this.state.i].question_text;
     let answer = questions[this.state.i].correct_choice_index;
-    
-    
+
+
     return (
       <div className="app">
         <h2>Riddle.It</h2>
-        
+
         <Questions qText ={question}/>
         <div className = "ansHolder">
           {this.state.questions[this.state.i].choices.map((element,x) => {
@@ -57,8 +57,8 @@ componentDidMount(){
 
           })}
         </div>
-        
-        
+
+
       </div>
     );
   }
