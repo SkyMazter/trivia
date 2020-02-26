@@ -5,6 +5,9 @@ class Answer extends Component {
        if(this.props.correctAns){
            alert("correct");
            this.props.click();
+       }else{
+           alert("wrong");
+           this.props.click();
        }
        
     }
