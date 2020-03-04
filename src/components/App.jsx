@@ -1,11 +1,12 @@
 import React from 'react';
-import data from'../testData/questions.js'
 import '../css/App.css';
 import {buildFirebase} from '../clients/firebase.js';
 
 // import components
 import Questions from './Question';
 import Answer from './Answer';
+import Counter from './Counter'; 
+import EndScreen from './EndScreen';
 class App extends React.Component {
 
 constructor(){
@@ -14,6 +15,7 @@ constructor(){
     questions: [],
     i: 0,
     points:0,
+    gameOver: false,
   }
 };
 componentDidMount(){
@@ -33,8 +35,13 @@ componentDidMount(){
     })
   }); 
 }
+endGame(){
+  this.setState({gameOver:true})
+}
   render() {
-
+if(this.state.gameOver){
+  return <EndScreen></EndScreen>
+}
     if(!this.state.questions.length){
       return null
     }
@@ -48,13 +55,20 @@ componentDidMount(){
       <div className="app">
         <h2>Riddle.It</h2>
         <h3>Points: {this.state.points}</h3>
+        <Counter endGame={()=>{this.endGame()}}></Counter>
         <Questions qText ={question}/>
         <div className = "ansHolder">
           {this.state.questions[this.state.i].choices.map((element,x) => {
             let correctAns =  (x === answer)
           return  <Answer ansText = {element} correctAns = {correctAns} click={()=>{
-            this.setState({i: this.state.i + 1}, () => console.log(this.state.i))
-            this.setState({points:this.state.points+1})
+            if(correctAns){
+              this.setState({points:this.state.points+1})
+            }else{
+              this.setState({points:this.state.points-1})
+              alert("Wrong");
+            }
+             this.setState({i: this.state.i + 1}, () => console.log(this.state.i))
+            
           }}/>
 
           })}
