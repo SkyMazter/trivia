@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 
+const GAME_LENGTH_IN_SECONDS = 60;
 class Counter extends Component {
     constructor(){
         super()
         this.state={
-          time:3,
+          time: GAME_LENGTH_IN_SECONDS,
         }
       };
       componentDidMount(){
