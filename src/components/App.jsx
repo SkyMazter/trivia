@@ -67,6 +67,11 @@ if(this.state.gameOver){
               this.setState({points:this.state.points-1})
               alert("Wrong");
             }
+            if(this.state.i +1 === this.state.questions.length){
+              this.setState({
+                gameOver: true
+              })
+            }
              this.setState({i: this.state.i + 1}, () => console.log(this.state.i))
             
           }}/>

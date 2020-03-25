@@ -3,12 +3,14 @@ import firebase from 'firebase';
 export function buildFirebase() {
   if (firebase.apps.length === 0) {
     const app = firebase.initializeApp({
-      apiKey: "AIzaSyADAYC7lX5QVEspv8BUeV2uDqrFle8yQpk",
-      authDomain: "studio-trivia-db.firebaseapp.com",
-      databaseURL: "https://studio-trivia-db.firebaseio.com",
-      projectId: "studio-trivia-db",
-      storageBucket: "studio-trivia-db.appspot.com",
-      messagingSenderId: "736024037811"
+      apiKey: "AIzaSyCK4txQNunXrmfWdHtGJz2wAdFuG4aeOV8",
+      authDomain: "codenationtrivia2020.firebaseapp.com",
+      databaseURL: "https://codenationtrivia2020.firebaseio.com",
+      projectId: "codenationtrivia2020",
+      storageBucket: "codenationtrivia2020.appspot.com",
+      messagingSenderId: "114921016465",
+      appId: "1:114921016465:web:c3b899873761f7d441c330",
+      measurementId: "G-TV8D2G83BB",
     });
     return firebase.database(app);
   } else {
