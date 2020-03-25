@@ -40,7 +40,7 @@ endGame(){
 }
   render() {
 if(this.state.gameOver){
-  return <EndScreen></EndScreen>
+  return <EndScreen points={this.state.points}></EndScreen>
 }
     if(!this.state.questions.length){
       return null
