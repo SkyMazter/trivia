@@ -1,16 +1,13 @@
 import React, {Component} from 'react';
 
 class Answer extends Component {
-    handler = () =>{
-       if(this.props.correctAns){
-           alert("correct");
-       }
-        
-    }
+    
+   
     render(){
         return(
-            <div className = "answer" onClick={this.handler}>
+            <div className = "answer" onClick={this.props.click}>
                 <p>{this.props.ansText}</p>
+                
             </div>
         );
     }
